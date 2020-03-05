@@ -24,6 +24,7 @@ RUN composer install \
 # Application
 #
 FROM php:7.2-apache-stretch
+RUN docker-php-ext-install mysqli pdo pdo_mysql
 
 WORKDIR /app
 ADD . /app
