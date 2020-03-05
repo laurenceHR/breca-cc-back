@@ -15,8 +15,9 @@ class TenantsController extends Controller{
 			return 
 				Counts::with(['area' => function($q) use ($tenant_id) {
 						$q->where('tenant_id','=',$tenant_id);
-					}])					
-					->get()					
+					}])
+					->orderBy('date','ASC')			
+					->get()
 					->toJson();
 		}
 		return [];
